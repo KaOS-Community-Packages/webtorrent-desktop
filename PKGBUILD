@@ -1,5 +1,5 @@
 pkgname=webtorrent-desktop
-pkgver=0.3.3
+pkgver=0.4.0
 pkgrel=1
 pkgdesc="A streaming torrent client"
 arch=('x86_64')
@@ -7,12 +7,9 @@ url="https://webtorrent.io/desktop"
 license=('MIT')
 depends=('gtk2' 'gconf')
 source=("https://github.com/feross/$pkgname/releases/download/v${pkgver}/${pkgname}_${pkgver}-1_amd64.deb" "webtorrent-desktop.desktop" "webtorrent-desktop.png")
-sha256sums=('57fe534d124cf59e6a2dc0fab35526415a474deaad2e3decfb00a628321a6502'
+sha256sums=('08055cc7d328e7810f10f0865033f19f696cfad976b1be188a2143d0da9a29f7'
             'ce832f86df17e21162eaf4ee43412502430fd566a326334f3fffd1d33fa28a78'
             'f7dec58d9e5e3a025377a9f789d6fc4f74c7c801fd3e0692e3b6c33f46f016f8')
-
-install=${pkgname}.install
-
 package() {
     bsdtar -xf data.tar.gz -C ${pkgdir}
     chmod +x ${pkgdir}/opt/${pkgname}/WebTorrent
